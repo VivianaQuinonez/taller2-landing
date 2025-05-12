@@ -1,0 +1,195 @@
+/* RESET BÁSICO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* ENCABEZADO */
+  header {
+    padding: 20px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ← Esto alinea el logo a la izquierda */
+  }
+  
+  
+  header img {
+    max-width: 160px;
+    margin-left: 20px;
+  }
+  
+  
+  /* SECCIÓN INTRO */
+  #intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #111;
+    gap: 40px;
+  }
+  
+  #intro .text,
+  #intro .imagen {
+    flex: 1 1 300px;
+    max-width: 500px;
+    text-align: center;
+  }
+  
+  #intro h2 {
+    color: #4285ff;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  
+  #intro p {
+    margin-bottom: 20px;
+  }
+  
+  #intro .boton {
+    display: inline-block;
+    background-color: #4285ff;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+  
+  #intro .imagen img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  /* Responsive para pantallas pequeñas */
+  @media (max-width: 768px) {
+    #intro {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    #intro .text,
+    #intro .imagen {
+      max-width: 100%;
+    }
+  }
+  
+  
+  /* BENEFICIOS */
+  #beneficios {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #000;
+  }
+  
+  #beneficios h3 {
+    color: #4285ff;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  #beneficios .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: auto;
+    justify-items: center;
+    padding: 0 20px;
+  }
+  
+  @media (max-width: 600px) {
+    #beneficios .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  #beneficios .item {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  
+  #beneficios .item img {
+    max-height: 40px;
+    margin-bottom: 10px;
+  }
+  
+  #beneficios .item p {
+    font-size: 0.95rem;
+  }
+  
+  /* TESTIMONIOS */
+  #testimonios {
+    background-color: #111;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  #testimonios h3 {
+    margin-bottom: 30px;
+    color: #4285ff;
+  }
+  
+  .testimonios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: auto;
+  }
+  
+  .testimonio {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    color: #eee;
+  }
+  
+  /* CTA FINAL */
+  #cta-final {
+    background-color: #000;
+    text-align: center;
+    padding: 50px 20px;
+  }
+  
+  #cta-final h3 {
+    color: #4285ff;
+    margin-bottom: 20px;
+  }
+  
+  #cta-final .boton {
+    background-color: #4285ff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.85rem;
+    background-color: #111;
+    color: #777;
+  }
+  
+  .icono-beneficio {
+    color: #4285ff;
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
