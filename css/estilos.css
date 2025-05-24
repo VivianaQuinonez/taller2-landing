@@ -30,45 +30,103 @@
   
   /* SECCIÓN INTRO */
   #intro {
-    margin: 60px 0;
-    margin-left: 60px;
-    margin-right: 60px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
+  align-items: center; /* Centrado vertical */
+  gap: 15px; /* Más espacio entre texto e imagen */
+  max-width: 1200px;
+  margin: 80px auto;
+  margin: 20px 40px 60px 40px;
+  padding: 0 20px;
   }
   
   #intro .text {
-    flex: 3;
-    max-width: 75%;
+    flex: 3; /* 75% del espacio */
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ocupa todo el alto disponible */
+  justify-content: space-between; /* Distribuye verticalmente */
+  padding: 20px 0; /* Espacio vertical interno */
   }
   
   #intro .imagen {
     flex: 1;
-    max-width: 25%;
+    max-width: 300px;
   }
   
   #intro .imagen img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+  height: auto;
+  max-height: 400px; /* Altura máxima reducida */
+  object-fit: contain;
+  display: block;
+  margin-left: auto; /* Alinea la imagen a la derecha */
   }
+  
+  
+  .titulo-impactante {
+    margin-top: 0; /* Pegado al borde superior */
+  align-self: flex-start; /* Alineación izquierda */
+  }
+  
+  .bajada-destacada {
+    margin: auto 0; /* Centrado verticalmente */
+    align-self: flex-start; /* Alineación izquierda */
+  }
+
+  .boton-destacado {
+    display: inline-block;
+    margin-bottom: 0; /* Pegado al borde inferior */
+    padding: 18px 45px; /* Más grande que el original */
+    font-size: 1.3rem;
+    background: #EA381B;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    align-self: flex-start; /* Alineación izquierda */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .boton-destacado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(234, 56, 27, 0.4);
+  }
+  
   
   /* Para móviles: apilar verticalmente */
   @media (max-width: 768px) {
     #intro {
       flex-direction: column;
+      margin: 40px 0;
       text-align: center;
     }
-  
-    #intro .text,
-    #intro .imagen {
-      max-width: 100%;
-      flex: unset;
+
+    .text {
+      padding-right: 0;
+      margin-bottom: 30px;
     }
+    
+    .imagen {
+      height: 300px;
+    }
+    
+    .titulo-impactante {
+      font-size: 2rem;
+    }
+    
+    .bajada-destacada {
+      font-size: 1.1rem;
+    }
+    .boton-destacado {
+      font-size: 1.1rem;
+      padding: 15px 30px;
+      width: 100%;
+      text-align: center;
+    }
+
   }
   
   
@@ -253,7 +311,7 @@
   .valoracion {
     display: flex;
     gap: 5px;
-    margin: 10px 0;
+    margin: 10px 0 10px;
   }
   
   .valoracion img {
