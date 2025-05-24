@@ -30,35 +30,62 @@
   
   /* SECCIÓN INTRO */
   #intro {
+    margin: 60px 0;
+    margin-left: 60px;
+    margin-right: 60px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 40px 20px;
-    background-color: #111;
     gap: 40px;
+    padding: 40px 20px;
   }
   
-  #intro .text,
-  #intro .imagen {
-    flex: 1 1 300px;
-    max-width: 500px;
-    text-align: center;
+  #intro .text {
+    flex: 3;
+    max-width: 75%;
   }
+  
+  #intro .imagen {
+    flex: 1;
+    max-width: 25%;
+  }
+  
+  #intro .imagen img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* Para móviles: apilar verticalmente */
+  @media (max-width: 768px) {
+    #intro {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    #intro .text,
+    #intro .imagen {
+      max-width: 100%;
+      flex: unset;
+    }
+  }
+  
   
   #intro h2 {
     color: #4285ff;
     margin-bottom: 10px;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
   }
   
   #intro p {
     margin-bottom: 20px;
+    font-size: 1.25rem;
   }
   
   #intro .boton {
     display: inline-block;
-    background-color: #4285ff;
+    background-color: #EA381B;
     color: white;
     padding: 12px 24px;
     text-decoration: none;
@@ -101,8 +128,8 @@
   
   #beneficios .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
     max-width: 800px;
     margin: auto;
     justify-items: center;
@@ -114,11 +141,24 @@
       grid-template-columns: 1fr;
     }
   }
-  
-  #beneficios .item {
-    text-align: center;
-    padding: 10px;
-  }
+
+
+#beneficios .texto-beneficio {
+  padding: 10px 0; /* Espaciado vertical interno */
+  width: 100%;
+  padding-right: 10px;
+  text-align: left;
+}
+
+#beneficios .item {
+  display: flex;
+  align-items: center; /* Centrado vertical */
+  gap: 10px; /* Espacio entre ícono y texto */
+  padding: 20px;
+  min-height: 120px;
+  position: relative; /* Para posicionamiento relativo */
+  overflow: visible; /* Asegura que todo el contenido sea visible */
+}
   
   
   #beneficios .item img {
@@ -128,6 +168,45 @@
   
   #beneficios .item p {
     font-size: 0.95rem;
+    margin: 0;
+  }
+
+  #beneficios .icono-beneficio {
+    font-size: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%; /* Ocupa toda la altura del item */
+    padding: 0 20px;
+    margin: 0; /* Reseteamos márgenes */
+    color: #4285ff;
+    border-radius: 10px 0 0 10px;
+    align-self: stretch; /* Extiende altura */
+  }
+  
+  #beneficios .texto-beneficio {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 10px 5px; /* Espaciado interno */
+  }
+  
+  #beneficios .texto-beneficio {
+    flex: 1; /* Ocupa el espacio restante */
+    padding: 10px 5px; /* Espaciado interno */
+  }
+
+  #beneficios .texto-beneficio h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+  }
+
+  #beneficios .texto-beneficio p {
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  
+  #beneficios .texto-beneficio {
+    padding: 10px 0; /* Espaciado vertical interno */
   }
   
   /* TESTIMONIOS */
@@ -170,7 +249,7 @@
   }
   
   #cta-final .boton {
-    background-color: #4285ff;
+    background-color: #EA381B;
     color: white;
     padding: 12px 24px;
     border-radius: 8px;
@@ -186,10 +265,47 @@
     background-color: #111;
     color: #777;
   }
-  
-  .icono-beneficio {
-    color: #4285ff;
-    font-size: 24px;
-    margin-bottom: 10px;
+
+
+  #metafora {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: white;
+      font-family: sans-serif;
+    
   }
+
+  #metafora h3 {
+    color: #4285ff;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+
+
+  #metafora .fila {
+    display: flex;
+    align-items: stretch;
+  }
+
+  #metafora .texto {
+    width: 75%;
+    padding-right: 16px;
+    box-sizing: border-box;
+    text-align: justify;
+    color: black;
+  }
+
+  .imagen {
+    width: 25%;
+  }
+
+  .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+
   
