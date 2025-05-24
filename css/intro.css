@@ -1,0 +1,112 @@
+/* SECCIÓN INTRO */
+#intro {
+    display: flex;
+    align-items: center;
+    /* Centrado vertical */
+    gap: 15px;
+    /* Más espacio entre texto e imagen */
+
+    margin: 20px 40px 60px 40px;
+    padding: 15px 60px 60px;
+}
+
+#intro .text {
+    flex: 3;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Ocupa todo el alto disponible */
+    justify-content: space-between;
+    /* Distribuye el espacio entre elementos */
+    padding: 20px 0;
+    position: relative;
+    /* Para posicionamiento absoluto si es necesario */
+}
+
+#intro .imagen {
+    flex: 1;
+    max-width: 300px;
+}
+
+#intro .imagen img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    /* Altura máxima reducida */
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    /* Alinea la imagen a la derecha */
+}
+
+
+.titulo-impactante {
+    color: #4285ff;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    margin-top: 0;
+    align-self: flex-start;
+}
+
+.bajada-destacada {
+    margin: auto 0;
+    align-self: flex-start;
+    padding-right: 150px;
+
+}
+
+.boton-destacado {
+    display: inline-block;
+    margin-bottom: 0;
+    /* Pegado al borde inferior */
+    padding: 18px 45px;
+    /* Más grande que el original */
+    font-size: 1.3rem;
+    background: #EA381B;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    align-self: flex-start;
+    /* Alineación izquierda */
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-destacado:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(234, 56, 27, 0.4);
+}
+
+
+#intro p {
+    margin-bottom: 30px;
+    font-size: 1.25rem;
+}
+
+#intro .boton {
+    display: inline-block;
+    background-color: #EA381B;
+    color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#intro .imagen img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.smooth-scroll-btn {
+    /* Tus estilos de botón existentes */
+    padding: 12px 24px;
+    background-color: #f44336;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+  }
