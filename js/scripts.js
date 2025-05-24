@@ -23,26 +23,26 @@ document.querySelector('.open-modal-btn').addEventListener('click', () => {
     contactForm.reset();
 });
 
-contactForm.addEventListener('submit', function(e) {
+contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    
+
     document.getElementById('userName').textContent = name;
     document.getElementById('userEmail').textContent = email;
-    
+
     closeAllModals();
     openModal(confirmationModal);
 });
 
 document.getElementById('returnButton').addEventListener('click', () => {
     closeAllModals();
-    window.scrollTo({top: 0, behavior: 'smooth'});
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // Cerrar al hacer click fuera
-window.addEventListener('click', function(e) {
+window.addEventListener('click', function (e) {
     if (e.target.classList.contains('modal')) {
         closeAllModals();
     }
