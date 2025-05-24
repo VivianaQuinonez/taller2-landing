@@ -19,7 +19,7 @@
       <h2 class="titulo-impactante">El Eternauta y la Argentina que resiste:<br>política, poder y pueblo en viñetas.</h2>
       <p class="bajada-destacada">"Descubrí el mensaje oculto de El Eternauta: una historia de ciencia ficción que revela las sombras de la política argentina.<br>
         <strong>Curso online y gratuito.</strong></p>
-      <a href="#" class="boton-destacado">QUIERO MI CURSO GRATUITO</a>
+      <a href="#cta-final" class="boton-destacado smooth-scroll-btn">QUIERO MI CURSO GRATUITO</a>
     </div>
     <div class="imagen">
       <img src="img/eternauta.png" alt="Portada de El Eternauta">
@@ -186,7 +186,7 @@
   <!-- CTA final -->
   <section id="cta-final">
     <h3>¿ESTÁS LISTO PARA LEER ENTRE VIÑETAS,Y DESCUBRIR LA ARGENTINA QUE RESISTE?</h3>
-    <a href="#" class="boton">QUIERO MI CURSO GRATUITO</a>
+    <a href="#suscribir" class="boton open-modal-btn">QUIERO MI CURSO GRATUITO</a>
   </section>
   <!-- Footer -->
   <footer>
@@ -194,6 +194,41 @@
   </footer>
 
 
+  <!-- Modal de confirmacion -->
+  <div id="suscribir" class="modal">
+    <!-- Contenido del Modal -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class="modal-title">Completá el siguiente formulario</h2>
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <button type="submit" class="submit-btn"><b>ENVIAR</b></button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal de Confirmación (oculto inicialmente) -->
+<div id="confirmacion" class="modal">
+  <div class="modal-content">
+      <div class="confirmation-message">
+          <p id="congratsMessage">¡Felicitaciones <b><span id="userName"></span></b> por adquirir el curso sobre política, poder y pueblo en viñetas!</p>
+          <p>Revisa tu casilla <b><span id="userEmail"></span></b> para ingresar a la plataforma virtual.</p>
+          <p>¡Que lo disfrutes!</p>
+      </div>
+      <button type="button" class="submit-btn" id="returnButton"><b>VOLVER AL INICIO</b></button>
+  </div>
+</div>
+
+
+
   <script src="https://kit.fontawesome.com/794a046d3b.js" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 </html>
