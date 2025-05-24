@@ -1,60 +1,52 @@
 // Obtener elementos del DOM
-const modal = document.getElementById("suscribir");
+const formModal = document.getElementById('suscribir');
 const confirmationModal = document.getElementById('confirmacion');
-const btn = document.querySelector(".open-modal-btn");
-const span = document.getElementsByClassName("close")[0];
-const body = document.body;
-const returnButton = document.getElementById('returnButton');
+const contactForm = document.getElementById('contactForm');
 
-// Abrir modal al hacer clic en el botón
-btn.onclick = function() {
+
+function openModal(modal) {
     modal.style.display = "block";
-    body.classList.add("modal-open");
+    document.body.classList.add("modal-open");
 }
 
-// Cerrar modal al hacer clic en la X
-span.onclick = function() {
-    modal.style.display = "none";
-    body.classList.remove("modal-open");
-}
-
-// Cerrar modal al hacer clic fuera del contenido
-window.onclick = function(event) {
-    if (event.target == modal) {
+function closeAllModals() {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
         modal.style.display = "none";
-        body.classList.remove("modal-open");
-    }
+    });
+    document.body.classList.remove("modal-open");
 }
 
-// Manejar el envío del formulario
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+document.querySelector('.open-modal-btn').addEventListener('click', () => {
+    closeAllModals();
+    openModal(formModal);
+    contactForm.reset();
+});
 
-    modal.style.display = "none";
-    body.classList.remove("modal-open");
+contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
     
-    // Obtener los valores del formulario
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     
-    // Insertar los valores en el modal de confirmación
     document.getElementById('userName').textContent = name;
     document.getElementById('userEmail').textContent = email;
     
-    // Cerrar el modal del formulario
-    window.location.hash = '#';
-    
-    // Abrir el modal de confirmación
-    window.location.hash = '#confirmacion';
+    closeAllModals();
+    openModal(confirmationModal);
 });
 
-// Agregar evento click para volver al inicio
-returnButton.addEventListener('click', function() {
-    // Cerrar el modal de confirmación
-    confirmationModal.style.display = "none";
-    body.classList.remove("modal-open");
-    
-    // Volver al inicio (puedes ajustar esto según necesites)
-    window.location.href = "#"; // Para ir al inicio de la página
-    // O alternativamente: window.location.href = "tu-url-de-inicio.html";
+document.getElementById('returnButton').addEventListener('click', () => {
+    closeAllModals();
+    window.scrollTo({top: 0, behavior: 'smooth'});
 });
+
+// Cerrar al hacer click fuera
+window.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+        closeAllModals();
+    }
+});
+
+
+
